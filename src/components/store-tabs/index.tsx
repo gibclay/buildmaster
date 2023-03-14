@@ -1,5 +1,5 @@
 import React from 'react'
-import { Accordion, AccordionContent, Container, Icon, Menu, MenuItem } from 'semantic-ui-react'
+import { Container, Menu, MenuItem } from 'semantic-ui-react'
 import category from '../../interfaces/category'
 
 export interface StoreTabsProps {}
