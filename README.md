@@ -1,4 +1,4 @@
-# buildmaster
+# BuildMaster
 Frontend for DIY PC Builder Application
 
 # Getting Started with Create React App
