@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import Rout from '../../interfaces/route'
-import { Menu, MenuItem} from 'semantic-ui-react'
+import { Image, Menu, MenuItem} from 'semantic-ui-react'
+import logo from 'resources/Logo_1.png'
 
 export interface NavbarProps {
   route_list: Rout[]
@@ -16,6 +17,7 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
 
   return (
     <Menu borderless inverted stackable>
+      <Image src={logo} size='mini' />
       {props.route_list.map((elem, idx) => {
         if (elem.onNav) return (
           <MenuItem 
@@ -25,9 +27,10 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
             onClick={() => navigateHandler(elem.path)} 
             content={elem.title}
           />
-        )
+        );
+        else return (<div />)
       })}
-      <MenuItem  position='right' content={'Customer Service'} onClick={() => navigate('./help')} />
+      <MenuItem  position='right' content={'Log in'} onClick={() => {navigate('login')}} />
     </Menu>
   )
 }
