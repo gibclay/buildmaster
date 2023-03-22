@@ -17,7 +17,7 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
 
   return (
     <Menu borderless inverted stackable>
-      <Image src={logo} size='mini' />
+      <Image dimmer src={logo} size='mini' />
       {props.route_list.map((elem, idx) => {
         if (elem.onNav) return (
           <MenuItem 
