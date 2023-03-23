@@ -18,9 +18,9 @@ const ItemCard: React.FC<ItemCardProps> = (props) => {
     <Card>
       <Image size='medium' src={props.picture} />
       <Card.Content header textAlign='center'>{props.name}</Card.Content>
-      <Button 
+      <Button
       color={props.active? disabledColor: activeColor} 
-      icon='plus' 
+      icon={props.active? 'minus': 'plus'} 
       content={props.active? 'Remove Item': 'Add item'} 
       onClick={props.onButtonClick}/>
     </Card>

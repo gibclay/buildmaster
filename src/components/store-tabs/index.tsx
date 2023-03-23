@@ -92,19 +92,6 @@ export const StoreTabs: React.FC<StoreTabsProps> = (props) => {
                   }}
                   key={idx} />
                 </Grid.Row>
-                // <Grid.Row>
-                //   <Segment basic onClick={() => { props.setCategory(elem.title) }}>
-                //   <Grid.Column><InfoPopup content={elem.desc} position='top right' trigger={<Button floated='right' size='mini' icon='question' />} /></Grid.Column>
-                //   <Grid.Column>
-                //     <Segment basic><Menu.Item
-                //     name={elem.name}
-                //     disabled={elem.title===props.category? true: false}
-                //     icon={<Icon name={elem.icon}/>} 
-                    
-                //     key={idx}
-                //     /></Segment>
-                //   </Grid.Column></Segment>
-                // </Grid.Row>
               )
             })}
           </Menu>
