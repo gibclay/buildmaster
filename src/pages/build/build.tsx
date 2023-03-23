@@ -44,8 +44,7 @@ export const Build: React.FunctionComponent<PageProps> = props => {
               picture={elem.picture} 
               key={idx} 
               onButtonClick={() => handleItemClick(elem.name)}
-              active={cart.includes(elem.name)}
-              />
+              active={cart.includes(elem.name)} />
               )
             } else return <></>
           })}

@@ -12,7 +12,7 @@ interface pic_text {
 }
 
 export const Home: React.FunctionComponent<PageProps> = props => {
-  const desktops: pic_text[] = [ {picture: cheap_desktop, header: 'LOOK IN STORE', link: '/store'}, {picture: gaming_desktop, header: 'BUILD NOW', link: '/build'}]
+  const desktops: pic_text[] = [ {picture: gaming_desktop, header: 'BUILD NOW', link: '/build'}, {picture: cheap_desktop, header: 'LOOK IN STORE', link: '/store'}]
 
   return (
     <Segment>
