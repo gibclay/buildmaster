@@ -1,6 +1,7 @@
-import { Button, Container, Dropdown, DropdownSearchInput, Grid, Input } from 'semantic-ui-react';
+import { Button, Container, Dropdown, Grid, Input } from 'semantic-ui-react';
 
 export interface FiltersProps {
+  pointing?: boolean | "left" | "right" | "top" | "top left" | "top right" | "bottom" | "bottom left" | "bottom right" | undefined;
   filterMenuOpen?: any;
   setFilterMenuOpen?: any;
 }
@@ -11,7 +12,7 @@ const Filters: React.FC<FiltersProps> = (props) => {
   }
 
   return (
-    <Dropdown fluid pointing='top right' open={props.filterMenuOpen}>
+    <Dropdown fluid pointing={props.pointing} open={props.filterMenuOpen}>
       <Dropdown.Menu>
         <Container textAlign='center' text>
           <Grid padded stackable>

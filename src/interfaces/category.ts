@@ -2,6 +2,7 @@ import { SemanticICONS } from "semantic-ui-react";
 
 export interface category_icons {
   title: category;
+  desc: string;
   name: string;
   icon: SemanticICONS;
 }
