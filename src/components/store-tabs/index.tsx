@@ -14,6 +14,8 @@ export interface StoreTabsProps {
   setFilterMenuOpen?: any;
   cartMenuOpen?: any;
   setCartMenuOpen?: any;
+  buildMenuOpen?: any;
+  setBuildMenuOpen?: any;
   cart?: string[]| undefined;
 }
 
@@ -28,13 +30,13 @@ export const StoreTabs: React.FC<StoreTabsProps> = (props) => {
     props.setCartMenuOpen(!props.cartMenuOpen);
   }
 
+  const handleBuildMenuOpen = () => {
+    props.setCartMenuOpen(!props.buildMenuOpen);
+  }
+
   const v_buttons = () => {
     return (
       <Grid.Row>
-        {/* <Grid.Column style={{margin:'0.2em'}}>
-          <Button size='medium' content="Cart" icon="shopping cart" circular fluid onClick={handleCartMenuOpen} />
-          <Cart cart={props.cart} cartMenuOpen={props.cartMenuOpen} setCartMenuOpen={props.setCartMenuOpen}/>
-        </Grid.Column> */}
         <Grid.Column style={{margin:'0.2em'}}>
           <Button size='medium' color='black' content="Filters" icon="sliders horizontal" circular fluid onClick={handleFilterMenuOpen} />
           <Filters pointing='top right' filterMenuOpen={props.filterMenuOpen} setFilterMenuOpen={props.setFilterMenuOpen} />
@@ -72,6 +74,10 @@ export const StoreTabs: React.FC<StoreTabsProps> = (props) => {
     )
   }
 
+  const see_my_build = () => {
+    return <Button fluid icon='computer' circular content='My build' color='vk' onClick={() => {}} />
+  }
+
   return (
     <Segment basic floated='right'>
       <Grid>
@@ -94,6 +100,7 @@ export const StoreTabs: React.FC<StoreTabsProps> = (props) => {
                 </Grid.Row>
               )
             })}
+            {props.verticle && see_my_build()}
           </Menu>
           {!props.verticle && h_buttons()}
         </Grid.Row>
