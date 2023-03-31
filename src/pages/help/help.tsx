@@ -3,6 +3,7 @@ import PageProps from "../../interfaces/page"
 export const Help: React.FunctionComponent<PageProps> = props => {
   return (
     <div>
+      Customer Service
       <div style={{ background: '#6b8cc7', padding: '20px', textAlign: 'center' }}>
         <h2>How can we help you</h2>
       </div>
