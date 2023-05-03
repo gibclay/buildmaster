@@ -4,4 +4,5 @@ export default interface Rout {
   component: any;
   icon?: string;
   onNav: boolean;
+  hasNavBar: boolean;
 }

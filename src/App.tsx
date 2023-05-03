@@ -6,12 +6,15 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Navbar route_list={routes} />
-      <Routes>
-        {routes.map((elem) => { return (<Route path={elem.path} element={<elem.component />} />)})}
-      </Routes>
-    </div>
+    <Routes>
+      {routes.map((elem) => { 
+        return (
+          <Route path={elem.path} 
+          element={<>{elem.hasNavBar? (<Navbar route_list={routes} />): <></>}
+          <elem.component /></>} />
+        )
+      })}
+    </Routes>
   );
 }
 

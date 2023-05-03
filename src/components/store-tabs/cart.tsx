@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Button, Card, Dropdown, DropdownItem, Grid } from 'semantic-ui-react';
+import { Button, Card, Dropdown, Grid } from 'semantic-ui-react';
 
 export interface CartProps {
   pointing?: boolean | "left" | "right" | "top" | "top left" | "top right" | "bottom" | "bottom left" | "bottom right" | undefined;
@@ -11,8 +11,8 @@ export interface CartProps {
 const Cart: React.FC<CartProps> = (props) => {
   const navigate = useNavigate();
 
-  const handleCartMenuOpen = () => {
-    props.setCartMenuOpen(!props.cartMenuOpen);
+  const handleCartMenuOpen = (open: boolean) => {
+    props.setCartMenuOpen(!open);
   }
 
   return (
@@ -21,20 +21,19 @@ const Cart: React.FC<CartProps> = (props) => {
           <Grid padded stackable centered>
             <Grid.Row>
               <Grid.Column>
-                {props.cart && (
+                {props.cart? (
                 props.cart.map((elem, idx) => {
                   return <Grid.Row centered style={{margin: '1em'}}><Card centered content={elem}></Card></Grid.Row>
-                })
+                }) 
+                ) : (
+                 <Grid.Row><Card text='No items in shopping cart' /> </Grid.Row>
                 )}
-                {!props.cart && ( <DropdownItem text='No items in shopping cart' /> )}
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row>
-              <Button fluid content='Close' secondary onClick={handleCartMenuOpen} />
-            </Grid.Row>
-            <Grid.Row>
-              <Button fluid content='Buy cart' secondary onClick={() => {navigate('Checkout')}} />
-            </Grid.Row>
+            <div className='ui two buttons'>
+              <Button fluid content='Close' secondary onClick={() => handleCartMenuOpen(props.cartMenuOpen)} />
+              <Button fluid content='Buy cart' color='green' onClick={() => {navigate('/Checkout')}} />
+            </div>
           </Grid>
       </Dropdown.Menu>
     </Dropdown>
